@@ -482,6 +482,12 @@ export CHELIPED_CLI=/tmp/cheliped-browser/scripts/cheliped-cli.mjs
 
 각 Fork는 독립적으로 매일 실행되며, 자신만의 온톨로지를 진화시키고, 자신만의 지식그래프를 축적한다.
 
+### 실제 활용 사례
+
+| 프로젝트 | 주제 | 설명 | 링크 |
+|----------|------|------|------|
+| onto-osint4nknc | 북한 핵활동 모니터링 | 15개 도메인 엔티티 클래스, 20개 관계 유형, 6개 추론 규칙, 한/영 다국어 검색으로 북한 핵/미사일 동향을 추적 | [GitHub](https://github.com/aifactory-team/onto-osint4north-korean-nuclear-activities) |
+
 ### 설정 가이드
 
 수정할 파일은 `config/osint-config.json` **단 하나**다:

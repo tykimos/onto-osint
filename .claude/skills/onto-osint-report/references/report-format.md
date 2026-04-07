@@ -39,16 +39,10 @@ inferred_triples: N
 ### 전체 지식그래프 시각화
 ```mermaid
 graph LR
-    classDef person fill:#4ECDC4,stroke:#333,color:#000
-    classDef org fill:#FF6B6B,stroke:#333,color:#000
-    classDef event fill:#45B7D1,stroke:#333,color:#000
-    classDef location fill:#96CEB4,stroke:#333,color:#000
-    classDef concept fill:#FFEAA7,stroke:#333,color:#000
-    classDef newNode stroke-width:3px
-
-    ent-001["인물명"]:::person
-    ent-002["조직명"]:::org
-    ent-003["사건명"]:::event
+    ent-001(["👤 인물명"])
+    ent-002(["🏛 조직명"])
+    ent-003(["⚡ 사건명"])
+    ent-004(["📍 장소명"])
 
     ent-001 -->|소속| ent-002
     ent-001 -->|참여| ent-003
@@ -91,13 +85,16 @@ graph LR
 
 ### Mermaid 다이어그램 규칙
 - `graph LR` (좌→우) 또는 `graph TD` (상→하) 사용
-- 노드에 `classDef`로 엔티티 유형별 색상 적용:
-  - Person: `#4ECDC4` (청록)
-  - Organization: `#FF6B6B` (적색)
-  - Event: `#45B7D1` (하늘색)
-  - Location: `#96CEB4` (연녹색)
-  - Concept: `#FFEAA7` (연노란)
-- 새로 발견된 노드: `stroke-width:3px` (굵은 테두리)
+- **색상(classDef fill)을 사용하지 않는다** — GitHub 라이트/다크 모드 모두에서 가독성을 보장하기 위해 Mermaid 기본 테마 색상을 그대로 사용
+- 엔티티 유형 구분은 노드 라벨에 접두 이모지로 표현:
+  - Person: `👤`
+  - Organization: `🏛`
+  - Event: `⚡`
+  - Location: `📍`
+  - Concept: `💡`
+- 노드 형태로 유형을 추가 구분:
+  - 둥근 사각형 `(["..."])` — 기본
+  - 육각형 `{{"..."}}` — 추론으로만 발견된 노드 (선택)
 - 명시적 관계: 실선 화살표 `-->`
 - 추론된 관계: 점선 화살표 `-.->` + "추론:" 접두사
 - 노드 수가 config의 `report.max_kg_nodes`를 초과하면 중요도 순으로 잘라냄
